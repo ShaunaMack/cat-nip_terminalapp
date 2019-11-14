@@ -26,46 +26,63 @@ def cat_namer(number_of_words)
       "Squirt", "Storm", "Sunny", "Taylor", "Twilight", 
       "Twix", "Waffles", "Wags", "Woof", "Wooly", "Zen", "Tabby"]
   
+    name_array = []
+    #generate random number between 0 and length of Array
     
     number_of_words.times do
-    name = words[rand(words.length)]
-    
+        cat_word = words[rand(words.length)]
+        name_array.push(cat_word)
     end
-
-  p name
-
-
+    
+    cat_name = name_array.join(" ")
+    
+    return cat_name
 end
-  
 
+def confirm_name(kitty_called)
+    while true
+
+        puts "How about #{kitty_called}? y/n"
+        confirm = gets.chomp.downcase
+        if confirm == "y"
+            puts "Cat is officially named #{kitty_called}"
+            return true
+
+        elsif confirm == "n"
+            return false
+            
+        else
+            puts "Not a valid selection. Please select y or n"
+
+        end
+    end
+end
+
+
+#puts cat_namer(3) test that method works
   
 happy = false
 
 until happy == true
 
-
-    puts "If you have a word to include in this cat name type now or select n"
+    puts "If you have a word to include in this cat's name, please type it in. Otherwise, please type n:"
     personal_name = gets.chomp.capitalize
 
-        if personal_name == "N"
+    if personal_name == "N"
         puts "How many words in your cat name?"
         number_of_words = gets.chomp.to_i
-        cat_namer(number_of_words)
-        kitty_called = name_select
-        puts "How about #{kitty_called}? y/n"
-        confirm_name = gets.chomp
-            if confirm_name == y
-                puts "add a cat to class!!!"
-            else puts "try again"
-            end
+        kitty_called = cat_namer(number_of_words)
 
-        else
+        happy = confirm_name(kitty_called)
+
+    else
         puts "How many words in your cat name?"
-        number_of_words = gets.chomp.to_i
-        cat_namer(number_of_words) 
-        kitty_called = name_select + personal_name
-        puts "How about #{kitty_called}?"
-        end
+        number_of_words = gets.chomp.to_i - 1
+        kitty_called = cat_namer(number_of_words) + " " + personal_name
+        
+        happy = confirm_name(kitty_called)
+        
+    end
 
 
 end
