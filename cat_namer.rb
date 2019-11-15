@@ -61,9 +61,9 @@ end
 
 #puts cat_namer(3) test that method works
   
-def name_loop()
-happy = false
 
+happy = false
+def name_me_ow() #'Gator said this was acceptable and reasonable
 until happy == true
 
     puts "If you have a word to include in this cat's name, please type it in. Otherwise, please type n:"
@@ -85,8 +85,8 @@ until happy == true
         
     end
 
-
+    end
 end
 
-end
+
   

@@ -8,6 +8,7 @@ require_relative './cat_namer'
 
 a = Artii::Base.new
 
+prompt = TTY::Prompt.new
 
 
 shelters = [
@@ -19,6 +20,16 @@ shelters = [
     Cat.new("Ricky", "Tabby", "Short", "Affectionate", "Male", "3")])
   ]
 
+  def search_by_location(shelters) 
+
+    shelters.each {|shelter|  
+    puts "#{shelter.name}: #{shelter.location}"
+    }
+    puts "Which shelter would you like to select? (type name of shelter)"
+    meow = gets.chomp.capitalize
+  
+  end
+  
 # shelters = {
 #     "RSPCA" => ["Wacol", cat_count, available_rooms, [Cat.new(), cat2, cat3]],
 #     "Little Legs" => ["Brisbane City", ],
@@ -31,49 +42,54 @@ shelters = [
 
 
 
-def search_by_location() 
-
-  shelters.each {|shelter|  
-    puts "#{shelter.name}: #{shelter.location}"
-  }
-  puts "Which shelter would you like to select? (type name of shelter)"
-  meow = gets.chomp.capitalize
-
-end
+search_by_location() 
 
   def search_by_feature()
+    puts "Search kitty by feature"
+    choices = %w(age gender hair_type colour)
+    TTY::Prompt.new.multi_select("Select features", choices)
+    # feature_choice = TTY::Prompt.new.multi_select("Select feature(s)") do |menu| menu.enum ')'
     
-
+    #   menu.choice :age,{score: 10}
+    #   menu.choice :gender,{score: 20}
+    #   menu.choice :hair_type,{score: 30}
+    #   menu.choice :colour,{score: 40}
+      
   end
 
   def search()
-    puts "What would you like to search by?"
-    puts "Location: 1 or Cat Feature: 2"
-    search_choice = gets.chomp.to_i
-    case search_choice
-    when 1
-      search_by_location()
-    when 2
-      search_by_feature()
-    else
-      puts "not a valid selection"
-    end
+  search_choice = TTY::Prompt.new.select("Please select from the menu:\n".magenta, cycle: true, marker: '>', echo: false) do |menu| menu.enum ')'
+    menu.choice('Location', 1)
+    menu.choice('Cat Feature', 2)
+    menu.choice('Return to main menu', 3)
+  
+    puts "Checking for the value of search_choice inside search method #{search_choice}"
 
-  end
+  case search_choice
+  when 1
+    puts "Selected option 1"
+    search_by_location()
+  when 2
+    search_by_feature()
+  when 3
+    puts "menu"
+  end #end of case statement
+end #end of do |menu|
 
+end
+    
 
 
 quit = false
-
-until quit == true
-    
 
     puts a.asciify("Cat-Nip").blue
     puts " The pop up cat adoption centre".blue
     puts "Thank you for facilitating cat rehoming!".blue
     puts "-------------------------------------------".cyan
+  
+    until quit == true
 
-    i_want = TTY::Prompt.new.select("Please select from the menu:\n".magenta,  cycle: false, marker: '>', echo: true) do |menu|
+    i_want = prompt.select("Please select from the menu:\n".magenta, cycle: true, marker: '>', echo: false) do |menu|
         menu.choice('Search for a kitty to adopt', 1)
         menu.choice('Add kitty for adoption', 2)
         menu.choice('Adopt a kitty', 3)
@@ -82,8 +98,8 @@ until quit == true
     case i_want
     when 1
       puts "Kitty searching..."
+      puts "What would you like to search by?"
       search()
-
     when 2
       puts "Kitty adder"
 
@@ -91,9 +107,18 @@ until quit == true
       puts "Apply for a Kitty"
 
     when 4
-    puts "Thank you for helping to find forever homes for purrfect fur babies in need\n See you next time!"
-          return quit == false
+    puts "Thank you for helping to find forever homes for purrfect fur babies in need".blue
+    sleep(0.25)
+    puts a.asciify("P").cyan
+    sleep(0.25)
+    puts a.asciify("U").cyan
+    sleep(0.25)
+    puts a.asciify("R").cyan
+    sleep(0.25)
+    puts a.asciify("R").cyan
+    
+    return quit == false
 
         end
+    end
   end
-end

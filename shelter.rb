@@ -9,4 +9,8 @@ def initialize(name, location, available_rooms, cats)
     @cats = cats
 end
 
+
+
 end
+
+
