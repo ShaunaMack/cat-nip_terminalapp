@@ -61,6 +61,7 @@ end
 
 #puts cat_namer(3) test that method works
   
+def name_loop()
 happy = false
 
 until happy == true
@@ -87,5 +88,5 @@ until happy == true
 
 end
 
-  
+end
   

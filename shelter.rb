@@ -1,5 +1,6 @@
 class Shelter
 
+attr_accessor :name, :location, :available_rooms, :cats
 
 def initialize(name, location, available_rooms, cats)    
     @name = name

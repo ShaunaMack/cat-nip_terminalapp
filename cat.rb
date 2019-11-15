@@ -2,8 +2,7 @@ class Cat
 
     @@cat_count = 0
 
-    attr_accessor :name, :colour, :hair_type, 
-    
+    attr_accessor :name, :colour, :hair_type, :temperament, :gender, :age
     
     def initialize(name, colour, hair_type, temperament, gender, age)
         @name = name
@@ -14,7 +13,6 @@ class Cat
         @age = age
         @@cat_count += 1
     end
-
 
 end
 
