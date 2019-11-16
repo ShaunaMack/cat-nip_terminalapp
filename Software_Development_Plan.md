@@ -5,9 +5,9 @@ It connects all the nearby shelters to run the ultimate 'Pop-Up' cat rehoming bo
 
 **Problem to Solve:**
 
-There are many unwanted cats and lots of shelters but there isn't a database connecting all the shelters.
+There are sadly many unwanted cats and amzingly several shelters and independent cat foster carers but there isn't a database connecting all the shelters to maximise the chance of adoption. The easier it is to discover the available cats in need, the better chance of rehoming.
 
-Allow an operator in a pop up adoption centre to facilitate people to adopt a cat or drop off a cat for adoption.
+This app will allow an operator in a pop up adoption centre to facilitate people to adopt a cat or drop off a cat for adoption. This will 
 
 **Target Audience:**
 

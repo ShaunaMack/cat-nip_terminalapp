@@ -10,7 +10,6 @@ def initialize(name, location, available_rooms, cats)
 end
 
 
-
 end
 
 

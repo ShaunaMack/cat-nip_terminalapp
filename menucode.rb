@@ -23,15 +23,19 @@ def clear()
   puts "\e[H\e[2J"
 end
 
+=begin
+need to pass in shelters array 
+so that it can iterate over the array within the method
+=end
 
-def search_by_location(shelters) #need to pass in shelters array so that it can iterate over the array within the method
+def search_by_location(shelters) 
 
   shelters.each {|shelter|  
   puts "\n#{shelter.name}: #{shelter.location}\n"
   }
   while true
 
-      shelter_select = TTY::Prompt.new.select("which sheleter:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu|
+      shelter_select = TTY::Prompt.new.select("which sheleter:\n".colorize(:magenta),cycle: true, marker: '>', echo: false) do |menu|
       
           menu.choice('RSPCA')
           menu.choice('Little Legs')
@@ -64,7 +68,9 @@ def search_by_feature()
 
     if Cat.feature == selection 
       return 
-  
+    else
+      puts "oops"
+    end
   end
 end
 
@@ -94,8 +100,8 @@ def search()
 
       end # of case statement
     
-  end # of do |menu|
-end
+    end # of do |menu|
+  end # of while loop
 end # of method
 
 
@@ -107,35 +113,33 @@ puts "-------------------------------------------".colorize(:cyan)
 while true
 
   i_want = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu|
-      
-    menu.choice('Search for a kitty to adopt', 1)
-    menu.choice('Add kitty for adoption', 2)
-    menu.choice('Adopt a kitty', 3)
-    menu.choice('Exit', 4)
+      menu.choice('Search for a kitty to adopt', 1)
+      menu.choice('Add kitty for adoption', 2)
+      menu.choice('Adopt a kitty', 3)
+      menu.choice('Exit', 4)
 
     case i_want
-      when 1
-        puts "Kitty searching..."
-        puts "What would you like to search by?"
-        search()
-      when 2
-        puts "Kitty adder"
+    when 1
+      puts "Kitty searching..."
+      puts "What would you like to search by?"
+      search()
+    when 2
+      puts "Kitty adder"
 
-      when 3
-        puts "Apply for a Kitty"
+    when 3
+      puts "Apply for a Kitty"
 
-      when 4
-        
-        farewell = a.asciify("PURRRRRR").colorize(:cyan)
-        farewell.length.times do |i| # Iterates over each index in a given string
-          clear()
-          # Displays all characters in the string up to the index being iterated over.
-          puts farewell[0, i]
-          sleep(0.01)
+    when 4
+      farewell = a.asciify("PURRRRRR").colorize(:cyan)
+      farewell.length.times do |i| # Iterates over each index in a given string
+        clear()
+        # Displays all characters in the string up to the index being iterated over.
+        puts farewell[0, i]
+        sleep(0.01)
         end
         puts "Thank you for helping to find forever homes for purrfect fur babies in need.".colorize(:blue)
         return 
+      end # of do user_input
+      end # of case
+end # of while
 
-    end # of case
-  end # of do
-end
