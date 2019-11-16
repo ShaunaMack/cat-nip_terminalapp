@@ -1,0 +1,58 @@
+## Statement of Purpose ##
+Cat-nip is a Terminal App to help rehome rescue cats in the Brisbane area. 
+
+It connects all the nearby shelters to run the ultimate 'Pop-Up' cat rehoming booth!
+
+**Problem to Solve:**
+
+There are many unwanted cats and lots of shelters but there isn't a database connecting all the shelters.
+
+Allow an operator in a pop up adoption centre to facilitate people to adopt a cat or drop off a cat for adoption.
+
+**Target Audience:**
+
+Adoption shelters and independent cat foster care providers would be able to work together and streamline processes of cat adoption to maximise possibility of finding forever homes.
+
+
+
+## Features ##
+
+1. Search for a new purring fur baby by
+    - location of the local shelters
+    - desirable features for your kitty (for example, colour - ginger)
+2. Apply to adopt your chosen bundle of joy
+    - form created for your customer and sent to the shelter for approval
+3. A stray cat can be added to the database and notifiction sent to a shelter that has room to look after cat where it will live until someone is ready to adopt the kitty baby
+
+
+All these features make this 'Pop-Up' cat rehoming booth easy for the chief cat adoption officer to facilitate cat and kitten rehoming in the easiest way possible.
+
+## Project Management ##
+
+Trello board created with specific user stories to plan and prioritise tasks. The Kanban method was utilised on the Trello board with cards - containing checklists to complete.
+This ensured the project remained on track and progress or lack of progress over specific time periods could be 
+
+Stand up meetings were held twice. In future, especially when working in teams on separate branches, this method will be utilised more effectively.
+
+![demonstration of Trello Baord in action during project](Trello_Board_in_progress.png)
+
+
+
+## Original Concept Flow Chart ##
+![conept for cat-nip app as a flowcharts](Original_catnip_flowchart.png)
+
+
+## Log of Progress ##
+
+| Date       | Status Update                                 
+|------------|------------------------------|
+| 09/11/2019 | Brainstorm ideas and make git repository                                                                                                                                                                        
+| 10/11/2019 | Make initial flowchart on lucidcharts. Make Trello Board with Assignment Criteria and User Stories. Send images of flowchart and Trello board to Naveen (techspert) for initial feedback/affirmation          
+| 14/11/2019 | Write code for random name generator including choosing over 200 gender neutral cat names. Make Cat and Shelter classes. Install and run ruby gem 'artii'. Write code for main menu using until loop and case 
+| 15/11/2019 | Change menu code to use ruby gem 'tty-prompt' to make menu easier to use and to decrease issues with user input (limits errors). Install ruby gem catpix and attempt to run - not working yet. Write code for search methods to search and display cats |   
+| 16/11/2019 | 
+-------------------------------------------------------------
+
+
+## User interaction ##
+How to use this App - screen shots of app running

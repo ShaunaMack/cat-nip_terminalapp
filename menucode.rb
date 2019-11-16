@@ -8,91 +8,110 @@ require_relative './cat_namer'
 
 a = Artii::Base.new
 
-prompt = TTY::Prompt.new
-
 
 shelters = [
-  Shelter.new("RSPCA", "Wacol", 100, [
+  Shelter.new("RSPCA", "Wacol", 20, [
     Cat.new("Mr Purr", "Tabby", "Short", "Quiet", "Male", "3"), 
     Cat.new("Dundee", "White", "Long", "Quiet", "Female", "3")]),
-  Shelter.new("Little Legs", "Brisbane City", 40, [
+  Shelter.new("Little Legs", "Brisbane City", 10, [
     Cat.new("Duncan", "Tabby", "Short", "Boisterous", "Male", "5"), 
     Cat.new("Ricky", "Tabby", "Short", "Affectionate", "Male", "3")])
   ]
 
-def search_by_location(shelters) 
+
+def clear()
+  puts "\e[H\e[2J"
+end
+
+
+def search_by_location(shelters) #need to pass in shelters array so that it can iterate over the array within the method
 
   shelters.each {|shelter|  
-  puts "#{shelter.name}: #{shelter.location}"
+  puts "\n#{shelter.name}: #{shelter.location}\n"
   }
-  puts "Which shelter would you like to select? (type name of shelter)"
-  meow = gets.chomp.capitalize
+  while true
 
-end
+      shelter_select = TTY::Prompt.new.select("which sheleter:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu|
+      
+          menu.choice('RSPCA')
+          menu.choice('Little Legs')
+          menu.choice('Return to menu')
+
+      case shelter_select
+      when 'RSPCA'
+          puts "Meow"
+              
+      when 'Little Legs'
+          puts "Woof"
+
+      when 'Return to menu'
+          return false
+      
+      end # of case statement
+  end # of do |menu|
+end # of loop
+end # of function
+
   
-# shelters = {
-#     "RSPCA" => ["Wacol", cat_count, available_rooms, [Cat.new(), cat2, cat3]],
-#     "Little Legs" => ["Brisbane City", ],
-#     "Animal Rescue QLD" => ["Garnge", ],
-#     "Animal Welfare League QLD" => ["Helensvale", ],
-#     "Little Paws Kitten Rescue" => ["Logan", ],
-#     "Brisbane Valley Cat Rescue" => ["Esk", ],
-#     "Naveen's Cat Foster Care" => ["Spring Hill", 0, 9],
-# }
-
-
 
 def search_by_feature()
+  while true
+
+    
   puts "Search kitty by feature"
   choices = %w(age gender hair_type colour)
-  TTY::Prompt.new.multi_select("Select features", choices)
-  # feature_choice = TTY::Prompt.new.multi_select("Select feature(s)") do |menu| menu.enum ')'
+  selection = TTY::Prompt.new.multi_select("Select features", choices)
+
+    if Cat.feature == selection 
+      return 
   
-  #   menu.choice :age,{score: 10}
-  #   menu.choice :gender,{score: 20}
-  #   menu.choice :hair_type,{score: 30}
-  #   menu.choice :colour,{score: 40}
-    
+  end
 end
 
 def search()
-  search_choice = TTY::Prompt.new.select("Please select from the menu:\n".magenta, cycle: true, marker: '>', echo: false) do |menu| menu.enum ')'
+
+  while true
+
+  search_choice = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu| 
+    
     menu.choice('Location', 1)
     menu.choice('Cat Feature', 2)
     menu.choice('Return to main menu', 3)
 
-    puts "Checking for the value of search_choice inside search method #{search_choice}"
+    #puts "Checking for the value of search_choice inside search method #{search_choice}"
 
     case search_choice
-    when 1
-      puts "Selected option 1"
-      search_by_location(shelters)
-    when 2
-      search_by_feature()
-    when 3
-      puts "menu"
-    end #end of case statement
-    
-  end #end of do |menu|
+      when 1
+        puts "Selected option 1"
+        search_by_location(shelters)
 
+      when 2
+        search_by_feature()
+
+      when 3
+        puts "menu"
+        return false
+
+      end # of case statement
+    
+  end # of do |menu|
 end
-    
+end # of method
 
 
-quit = false
+puts a.asciify("Cat-Nip").colorize(:blue)
+puts " The pop up cat adoption centre".colorize(:blue)
+puts "Thank you for facilitating cat rehoming!".colorize(:blue)
+puts "-------------------------------------------".colorize(:cyan)
 
-puts a.asciify("Cat-Nip").blue
-puts " The pop up cat adoption centre".blue
-puts "Thank you for facilitating cat rehoming!".blue
-puts "-------------------------------------------".cyan
+while true
 
-until quit == true
-
-  i_want = prompt.select("Please select from the menu:\n".magenta, cycle: true, marker: '>', echo: false) do |menu|
-      menu.choice('Search for a kitty to adopt', 1)
-      menu.choice('Add kitty for adoption', 2)
-      menu.choice('Adopt a kitty', 3)
-      menu.choice('Exit', 4)
+  i_want = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu|
+      
+    menu.choice('Search for a kitty to adopt', 1)
+    menu.choice('Add kitty for adoption', 2)
+    menu.choice('Adopt a kitty', 3)
+    menu.choice('Exit', 4)
 
     case i_want
       when 1
@@ -106,12 +125,17 @@ until quit == true
         puts "Apply for a Kitty"
 
       when 4
-      puts "Thank you for helping to find forever homes for purrfect fur babies in need".blue
-      sleep(0.75)
-      puts a.asciify("PURRRR").cyan
-
-      return quit == false
+        
+        farewell = a.asciify("PURRRRRR").colorize(:cyan)
+        farewell.length.times do |i| # Iterates over each index in a given string
+          clear()
+          # Displays all characters in the string up to the index being iterated over.
+          puts farewell[0, i]
+          sleep(0.01)
+        end
+        puts "Thank you for helping to find forever homes for purrfect fur babies in need.".colorize(:blue)
+        return 
 
     end # of case
   end # of do
-end # of until
+end

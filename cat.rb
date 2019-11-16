@@ -16,8 +16,11 @@ class Cat
 
 end
 
-
-
+# def display_cat()
+#     shelters.each {|shelter[|  
+#     puts "\n#{shelter.name}: #{shelter.location}\n"
+#     }
+# end
 
 
 
