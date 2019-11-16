@@ -125,7 +125,29 @@ while true
       search()
     when 2
       puts "Kitty adder"
+      puts "What colour is the kitty?".colorize(:blue)
+      colour_choices = %w(tabby white ginger black white 2_colour tortoise_shell)
+      colour = TTY::Prompt.new.select("Select colour", colour_choices, cycle: true, marker: '>', echo: false)
+      
+      puts "Select hair type".colorize(:blue)
+      hair_choices = %w(long medium short)
+      colour = TTY::Prompt.new.select("Select hair type", hair_choices)
+      
+      puts "What is kitties temperament?".colorize(:blue)
+      temperament = gets.chomp
 
+      puts "Kitties gender?".colorize(:blue)
+      gender_choices = %w(female male)
+      colour = TTY::Prompt.new.select("Select gender", gender_choices)
+
+      puts "Kitties approximate age?".colorize(:blue)
+      age = gets.chomp
+      
+      name = name_me_ow()
+      
+      puts "Lets find a for now home for #{name}, ".colorize(:cyan)
+      sleep(1)
+      #shelter.push(Cat.new(name, hair_type, gender, age))
     when 3
       puts "Apply for a Kitty"
 

@@ -1,11 +1,13 @@
+require 'tty-prompt'
+
 def adopt_kitty()
     puts "Which cat would you like to give a forever home?"
-    cat_name = gets.chomp.downcase
+    pussycat_name = gets.chomp.capitalize
 
     #iterate over the shelters array to find cat
 while true
-    if cat_name == Cat.name
-        puts "You are applying to have #{Cat.name}, 
+    if pussycat_name == Cat.name
+        puts "You are applying to have #{pussycat_name}, 
         hair_type: #{Cat.hair_type}, 
         colour:#{Cat.colour}, 
         age: #{Cat.age}, 

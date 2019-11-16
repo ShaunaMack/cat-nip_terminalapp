@@ -1,5 +1,8 @@
+require 'colorize'
 
 def cat_namer(number_of_words)
+
+    # need a good list of gender neutral names for individuality of cat naming
 
     words = ["Cat", "Meow", "Purr", "Fluffy",
       "Turtle", "Speedy", "Coder", "Adrian", "Alaska", "Alex", 
@@ -27,22 +30,23 @@ def cat_namer(number_of_words)
       "Twix", "Waffles", "Wags", "Woof", "Wooly", "Zen", "Tabby"]
   
     name_array = []
-    #generate random number between 0 and length of Array
     
+    # user chooses number of words to be selected whilst iterating over array of names
+    # randomly selected names added to name array
     number_of_words.times do
         cat_word = words[rand(words.length)]
         name_array.push(cat_word)
     end
     
     cat_name = name_array.join(" ")
-    
+    # new cat name returned as a string
     return cat_name
 end
 
 def confirm_name(kitty_called)
     while true
 
-        puts "How about #{kitty_called}? y/n"
+        puts "How about #{kitty_called}? y/n".colorize(:blue)
         confirm = gets.chomp.downcase
         if confirm == "y"
             puts "Cat is officially named #{kitty_called}"
@@ -59,29 +63,32 @@ def confirm_name(kitty_called)
 end
 
 
-#puts cat_namer(3) test that method works
+#puts cat_namer(3) to test that the method works
   
+def name_me_ow() #'Gator said this was acceptable and reasonable
 
 happy = false
-def name_me_ow() #'Gator said this was acceptable and reasonable
+
 until happy == true
 
-    puts "If you have a word to include in this cat's name, please type it in. Otherwise, please type n:"
+    puts "If you have a word to include in this cat's name, please type it in. Otherwise, please type n:".colorize(:blue)
     personal_name = gets.chomp.capitalize
 
     if personal_name == "N"
-        puts "How many words in your cat name?"
+        puts "How many words in your cat name?".colorize(:blue)
         number_of_words = gets.chomp.to_i
         kitty_called = cat_namer(number_of_words)
 
         happy = confirm_name(kitty_called)
+        return kitty_called
 
     else
-        puts "How many words in your cat name?"
+        puts "How many words in your cat name?".colorize(:blue)
         number_of_words = gets.chomp.to_i - 1
         kitty_called = cat_namer(number_of_words) + " " + personal_name
         
         happy = confirm_name(kitty_called)
+        return kitty_called
         
     end
 
@@ -89,4 +96,3 @@ until happy == true
 end
 
 
-  
