@@ -2,21 +2,23 @@ require 'colorize'
 #require 'catpix'
 require 'artii'
 require 'tty-prompt'
+require_relative './util'
 require_relative './shelter'
 require_relative './cat'
 require_relative './cat_namer'
 require_relative './search_location'
-require_relative './util'
+require_relative './search_feature'
+
 
 a = Artii::Base.new
 
 shelters = [
   Shelter.new("RSPCA", "Wacol", 20, [
-    Cat.new("Mr Purr", "Tabby", "Short", "Quiet", "Male", "3"), 
-    Cat.new("Dundee", "White", "Long", "Quiet", "Female", "3")]),
+    Cat.new("Mr Purr", "Tabby", "Short_hair", "Quiet", "Male", "3"), 
+    Cat.new("Dundee", "White", "Long_hair", "Quiet", "Female", "3")]),
     Shelter.new("Little Legs", "Brisbane City", 10, [
-    Cat.new("Duncan", "Tabby", "Short", "Boisterous", "Male", "5"), 
-    Cat.new("Ricky", "Tabby", "Short", "Affectionate", "Male", "3")]),
+    Cat.new("Duncan", "Tabby", "Short_hair", "Boisterous", "Male", "5"), 
+    Cat.new("Ricky", "Tabby", "Short_hair", "Affectionate", "Male", "3")]),
     Shelter.new("Animal Rescue QLD", "Garnge", 1, []),
     Shelter.new("Animal Welfare League QLD", "Helensvale", 1, []),
     Shelter.new("Little Paws Kitten Rescue", "Logan", 1, []),
@@ -25,27 +27,9 @@ shelters = [
   ]
 
 
-=begin
-need to pass in shelters array 
-so that it can iterate over the array within the method
-=end
 
-
-def search_by_feature()
-  while true
-
-    
-  puts "Search kitty by feature"
-  choices = %w(age gender hair_type colour)
-  selection = TTY::Prompt.new.multi_select("Select features", choices)
-
-    if Cat.feature == selection 
-      return 
-    else
-      puts "oops"
-    end
-  end
-end
+#need to pass in shelters array 
+#so that it can iterate over the array within the method
 
 def search(shelters)
 
@@ -66,7 +50,7 @@ def search(shelters)
         search_by_location(shelters)
 
       when 2
-        search_by_feature()
+        search_by_feature(shelters)
 
       when 3
         puts "menu"
@@ -123,7 +107,7 @@ while true
       
       puts "Lets find a for now home for #{name}, ".colorize(:cyan)
       sleep(1)
-      #shelter.push(Cat.new(name, hair_type, gender, age))
+      #shelter.push(shelter.name, Cat.new(name, hair_type, gender, age))
     when 3
       puts "Apply for a Kitty"
 
