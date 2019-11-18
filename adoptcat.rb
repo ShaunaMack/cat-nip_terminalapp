@@ -17,6 +17,7 @@ def adopt_kitty(shelters)
     shelters.each {|shelter|  
         shelter.cats.each {|cat|
             menu.push(cat.name)}
+    
 
         cat_select = TTY::Prompt.new.select("Which cat has a possible forever home?\n".colorize(:magenta), 
         menu, cycle: true, marker: '>', echo: false)
@@ -27,9 +28,9 @@ def adopt_kitty(shelters)
 
     shelters.each {|shelter|  
         shelter.cats.each {|cat| 
-        if cat_select == "Return to menu"
-            return
-        else
+
+        if cat_select == cat.name
+
             puts "You are applying to adopt out #{cat.name}, 
             hair_type: #{cat.hair_type}, 
             colour: #{cat.colour}, 
@@ -42,7 +43,9 @@ def adopt_kitty(shelters)
                 if selection == 'yes'
                     adoption_form()
                 end
-
+            
+        elsif    cat_select == "Return to menu"
+            return
         end
         }
     }
