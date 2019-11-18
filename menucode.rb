@@ -8,6 +8,7 @@ require_relative './cat'
 require_relative './cat_namer'
 require_relative './search_location'
 require_relative './search_feature'
+require_relative './adoptcat'
 
 
 a = Artii::Base.new
@@ -110,6 +111,7 @@ while true
       #shelter.push(shelter.name, Cat.new(name, hair_type, gender, age))
     when 3
       puts "Apply for a Kitty"
+      adopt_kitty(shelters)
 
     when 4
       farewell = a.asciify("PURRRRRR").colorize(:cyan)

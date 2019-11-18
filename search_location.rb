@@ -23,10 +23,11 @@ def search_by_location(shelters)
     
     shelters.each {|shelter|  
         if shelter_select == shelter.name
-            puts "The kitty babies to select from #{shelter_select} are:"
+            puts "The kitty babies to select from #{shelter_select} are:\n"
             shelter.cats.each {|cat|
-                puts "Name:#{cat.name} Colour:#{cat.colour} Hair:#{cat.hair_type} 
-                Temperament:#{cat.temperament} Gender:#{cat.gender} Age:#{cat.age}"
+                puts ""
+                puts "Name: #{cat.name} Colour: #{cat.colour} Hair: #{cat.hair_type} 
+                Temperament: #{cat.temperament} Gender: #{cat.gender} Age: #{cat.age}\n"
             }
         end
     }
