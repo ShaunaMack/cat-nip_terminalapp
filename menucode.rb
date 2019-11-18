@@ -13,11 +13,15 @@ shelters = [
   Shelter.new("RSPCA", "Wacol", 20, [
     Cat.new("Mr Purr", "Tabby", "Short", "Quiet", "Male", "3"), 
     Cat.new("Dundee", "White", "Long", "Quiet", "Female", "3")]),
-  Shelter.new("Little Legs", "Brisbane City", 10, [
+    Shelter.new("Little Legs", "Brisbane City", 10, [
     Cat.new("Duncan", "Tabby", "Short", "Boisterous", "Male", "5"), 
-    Cat.new("Ricky", "Tabby", "Short", "Affectionate", "Male", "3")])
+    Cat.new("Ricky", "Tabby", "Short", "Affectionate", "Male", "3")]),
+    Shelter.new("Animal Rescue QLD", "Garnge", 1, []),
+    Shelter.new("Animal Welfare League QLD", "Helensvale", 1, []),
+    Shelter.new("Little Paws Kitten Rescue", "Logan", 1, []),
+    Shelter.new("Brisbane Valley Cat Rescue", "Esk", 1, []),
+    Shelter.new("Naveen's Cat Foster Care", "Spring Hill", 9, []),
   ]
-
 def clear()
   puts "\e[H\e[2J"
 end
@@ -48,7 +52,8 @@ def search(shelters)
 
   while true
 
-  search_choice = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu| 
+  search_choice = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), 
+      cycle: true, marker: '>', echo: false) do |menu| 
     
     menu.choice('Location', 1)
     menu.choice('Cat Feature', 2)
@@ -82,7 +87,8 @@ puts "-------------------------------------------".colorize(:cyan)
 
 while true
 
-  i_want = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), cycle: true, marker: '>', echo: false) do |menu|
+  i_want = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), 
+        cycle: true, marker: '>', echo: false) do |menu|
       menu.choice('Search for a kitty to adopt', 1)
       menu.choice('Add kitty for adoption', 2)
       menu.choice('Adopt a kitty', 3)
@@ -97,7 +103,8 @@ while true
       puts "Kitty adder"
       puts "What colour is the kitty?".colorize(:blue)
       colour_choices = %w(tabby white ginger black white 2_colour tortoise_shell)
-      colour = TTY::Prompt.new.select("Select colour", colour_choices, cycle: true, marker: '>', echo: false)
+      colour = TTY::Prompt.new.select("Select colour", colour_choices, 
+        cycle: true, marker: '>', echo: false)
       
       puts "Select hair type".colorize(:blue)
       hair_choices = %w(long medium short)

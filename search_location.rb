@@ -8,29 +8,28 @@ require_relative './cat_namer'
 
 
 def search_by_location(shelters) 
-
+    puts "Shelter names and locations".colorize(:blue)
   shelters.each {|shelter|  
   puts "\n#{shelter.name}: #{shelter.location}\n"
   }
   while true
 
-      shelter_select = TTY::Prompt.new.select("which sheleter:\n".colorize(:magenta),cycle: true, marker: '>', echo: false) do |menu|
-      
-          menu.choice('RSPCA')
-          menu.choice('Little Legs')
-          menu.choice('Return to menu')
+    menu = ["Return to menu"]
+        shelters.each { |shelter| menu.push(shelter.name)}
 
-      case shelter_select
-      when 'RSPCA'
-          puts "Meow"
-              
-      when 'Little Legs'
-          puts "Woof"
+        
+        shelter_select = TTY::Prompt.new.select("Which shelter would you like to search?\n".colorize(:magenta), 
+        menu, cycle: true, marker: '>', echo: false)
+            
+        if shelter_select == shelter.name
+            puts "The kitty babies to select from #{shelter_select} are:"
 
-      when 'Return to menu'
+
+        else    
+
           return false
       
-      end # of case statement
+        end # of if statement
   end # of do |menu|
-end # of loop
 end # of function
+
