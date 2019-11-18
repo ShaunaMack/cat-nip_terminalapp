@@ -1,4 +1,5 @@
 require 'tty-prompt'
+require_relative './util'
 
 def adopt_kitty()
     puts "Which cat would you like to give a forever home?"

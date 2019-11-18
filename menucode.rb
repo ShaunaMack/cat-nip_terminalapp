@@ -6,6 +6,7 @@ require_relative './shelter'
 require_relative './cat'
 require_relative './cat_namer'
 require_relative './search_location'
+require_relative './util'
 
 a = Artii::Base.new
 
@@ -22,9 +23,7 @@ shelters = [
     Shelter.new("Brisbane Valley Cat Rescue", "Esk", 1, []),
     Shelter.new("Naveen's Cat Foster Care", "Spring Hill", 9, []),
   ]
-def clear()
-  puts "\e[H\e[2J"
-end
+
 
 =begin
 need to pass in shelters array 
@@ -52,7 +51,7 @@ def search(shelters)
 
   while true
 
-  search_choice = TTY::Prompt.new.select("Please select from the menu:\n".colorize(:magenta), 
+  search_choice = TTY::Prompt.new.select("Please select from the kitty search menu:\n".colorize(:magenta), 
       cycle: true, marker: '>', echo: false) do |menu| 
     
     menu.choice('Location', 1)
@@ -134,7 +133,7 @@ while true
         clear()
         # Displays all characters in the string up to the index being iterated over.
         puts farewell[0, i]
-        sleep(0.01)
+        sleep(0.001)
         end
         puts "Thank you for helping to find forever homes for purrfect fur babies in need.".colorize(:blue)
         return 
