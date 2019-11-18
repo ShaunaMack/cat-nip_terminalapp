@@ -5,9 +5,9 @@ require 'tty-prompt'
 require_relative './shelter'
 require_relative './cat'
 require_relative './cat_namer'
+require_relative './search_location'
 
 a = Artii::Base.new
-
 
 shelters = [
   Shelter.new("RSPCA", "Wacol", 20, [
@@ -18,7 +18,6 @@ shelters = [
     Cat.new("Ricky", "Tabby", "Short", "Affectionate", "Male", "3")])
   ]
 
-
 def clear()
   puts "\e[H\e[2J"
 end
@@ -28,35 +27,6 @@ need to pass in shelters array
 so that it can iterate over the array within the method
 =end
 
-def search_by_location(shelters) 
-
-  shelters.each {|shelter|  
-  puts "\n#{shelter.name}: #{shelter.location}\n"
-  }
-  while true
-
-      shelter_select = TTY::Prompt.new.select("which sheleter:\n".colorize(:magenta),cycle: true, marker: '>', echo: false) do |menu|
-      
-          menu.choice('RSPCA')
-          menu.choice('Little Legs')
-          menu.choice('Return to menu')
-
-      case shelter_select
-      when 'RSPCA'
-          puts "Meow"
-              
-      when 'Little Legs'
-          puts "Woof"
-
-      when 'Return to menu'
-          return false
-      
-      end # of case statement
-  end # of do |menu|
-end # of loop
-end # of function
-
-  
 
 def search_by_feature()
   while true
@@ -74,7 +44,7 @@ def search_by_feature()
   end
 end
 
-def search()
+def search(shelters)
 
   while true
 
@@ -122,7 +92,7 @@ while true
     when 1
       puts "Kitty searching..."
       puts "What would you like to search by?"
-      search()
+      search(shelters)
     when 2
       puts "Kitty adder"
       puts "What colour is the kitty?".colorize(:blue)

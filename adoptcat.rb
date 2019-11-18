@@ -4,6 +4,7 @@ def adopt_kitty()
     puts "Which cat would you like to give a forever home?"
     pussycat_name = gets.chomp.capitalize
 
+
     #iterate over the shelters array to find cat
 while true
     if pussycat_name == Cat.name
