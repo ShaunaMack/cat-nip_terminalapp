@@ -38,7 +38,7 @@ end
 #     puts "r"
 # end
 
-def add_cat()
+def add_cat(shelters)
     puts "What colour is the kitty?".colorize(:blue)
       colour_choices = %w(Tabby White Ginger Black White 2_colour Tortoise_shell)
       colour = TTY::Prompt.new.select("Select colour", colour_choices, 
@@ -46,14 +46,14 @@ def add_cat()
       
       puts "Select hair type".colorize(:blue)
       hair_choices = %w(Long_hair Medium_hair Short_hair)
-      colour = TTY::Prompt.new.select("Select hair type", hair_choices)
+      hair_type = TTY::Prompt.new.select("Select hair type", hair_choices)
       
       puts "What is kitties temperament?".colorize(:blue)
       temperament = gets.chomp
 
       puts "Kitties gender?".colorize(:blue)
       gender_choices = %w(female male)
-      colour = TTY::Prompt.new.select("Select gender", gender_choices)
+      gender = TTY::Prompt.new.select("Select gender", gender_choices)
 
       puts "Kitties approximate age?".colorize(:blue)
       age = gets.chomp
@@ -63,33 +63,29 @@ def add_cat()
       puts "Lets find a for now home for #{name}, ".colorize(:cyan)
       sleep(1)
 
-      Cat.new(name, hair_type, gender, age)
+    
+      new_cat = Cat.new(name, colour, hair_type, temperament, gender, age)
 
-      return 
+    cat_to_shelter(shelters, new_cat)
 
 end
 
-# def cat_to_shelter(shelters, )
+def cat_to_shelter(shelters, new_cat)
+    
+    menu = ["Return to menu"]
+    shelters.each { |shelter| menu.push(shelter.name)}
 
-#     shelters.push(shelter, ) [
-        
-
-# menu = ["Return to menu"]
-#     shelters.each { |shelter| menu.push(shelter.name)}
-
-#     shelter_select = TTY::Prompt.new.select("Which shelter would you like to search?\n".colorize(:magenta), 
-#     menu, cycle: true, marker: '>', echo: false)
+    shelter_select = TTY::Prompt.new.select("Which shelter will look after the kitty?\n".colorize(:magenta), 
+    menu, cycle: true, marker: '>', echo: false)
+    
+    shelters.each {|shelter|  
+        if shelter_select == shelter.name
+            puts "The kitty will be added to #{shelter_select}\n"
+            shelter.cats.push(new_cat)
+            p shelter.cats
+            puts "Kitty is now searchable"
+        end
+    }
     
     
-#     shelters.each {|shelter|  
-#         if shelter_select == shelter.name
-#             puts "The kitty babies to select from #{shelter_select} are:\n"
-#             shelter.cats.each {|cat|
-#                 puts ""
-#                 puts "Name: #{cat.name} Colour: #{cat.colour} Hair: #{cat.hair_type} 
-#                 Temperament: #{cat.temperament} Gender: #{cat.gender} Age: #{cat.age}\n"
-#             }
-#         end
-#     }
-
-# end # of function
+end # of function

@@ -85,7 +85,7 @@ while true
       search(shelters)
     when 2
       puts "Kitty adder"
-      add_cat()
+      add_cat(shelters)
     when 3
       pusheen()
       puts "Apply for a Kitty"
