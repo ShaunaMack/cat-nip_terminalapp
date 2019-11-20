@@ -67,30 +67,30 @@ end
   
 def name_me_ow() #'Gator said this was acceptable and reasonable
 
-happy = false
+    happy = false
 
-until happy == true
+    until happy == true
 
-    puts "If you have a word to include in this cat's name, please type it in. Otherwise, please type n:".colorize(:blue)
-    personal_name = gets.chomp.capitalize
+        puts "If you have a word to include in this cat's name, please type it in.\n Otherwise, please type n:".colorize(:blue)
+        personal_name = gets.chomp.capitalize
 
-    if personal_name == "N"
-        puts "How many words in your cat name?".colorize(:blue)
-        number_of_words = gets.chomp.to_i
-        kitty_called = cat_namer(number_of_words)
+        if personal_name == "N"
+            puts "How many words in your cat name?".colorize(:blue)
+            number_of_words = gets.chomp.to_i
+            kitty_called = cat_namer(number_of_words)
 
-        happy = confirm_name(kitty_called)
-        return kitty_called
+            happy = confirm_name(kitty_called)
+            return kitty_called
 
-    else
-        puts "How many words in your cat name?".colorize(:blue)
-        number_of_words = gets.chomp.to_i - 1
-        kitty_called = cat_namer(number_of_words) + " " + personal_name
-        
-        happy = confirm_name(kitty_called)
-        return kitty_called
-        
-    end
+        else
+            puts "How many words in your cat name?".colorize(:blue)
+            number_of_words = gets.chomp.to_i - 1
+            kitty_called = cat_namer(number_of_words) + " " + personal_name
+            
+            happy = confirm_name(kitty_called)
+            return kitty_called
+            
+        end
 
     end
 end

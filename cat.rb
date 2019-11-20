@@ -29,18 +29,9 @@ class Cat
 end
 
 
-
-
-
-# begin
-#     cat_namer(meow)
-# rescue NameError
-#     puts "r"
-# end
-
 def add_cat(shelters)
     puts "What colour is the kitty?".colorize(:blue)
-      colour_choices = %w(Tabby White Ginger Black White 2_colour Tortoise_shell)
+      colour_choices = %w(Tabby White Ginger Black White 2_colour Tortoise_shell Calico)
       colour = TTY::Prompt.new.select("Select colour", colour_choices, 
         cycle: true, marker: '>', echo: false)
       
@@ -49,14 +40,18 @@ def add_cat(shelters)
       hair_type = TTY::Prompt.new.select("Select hair type", hair_choices)
       
       puts "What is kitties temperament?".colorize(:blue)
-      temperament = gets.chomp
+      temperament_choices = %w(Affectionate Quiet Energetic Even Athletic Assertive)
+      temperament = TTY::Prompt.new.select("Select temperament", temperament_choices)
+      
 
       puts "Kitties gender?".colorize(:blue)
       gender_choices = %w(female male)
       gender = TTY::Prompt.new.select("Select gender", gender_choices)
 
       puts "Kitties approximate age?".colorize(:blue)
-      age = gets.chomp
+      age_choices = %w(kitten adult mature)
+      age = TTY::Prompt.new.select("Select age", age_choices)
+      
       
       name = name_me_ow()
       
@@ -70,6 +65,7 @@ def add_cat(shelters)
 
 end
 
+
 def cat_to_shelter(shelters, new_cat)
     
     menu = ["Return to menu"]
@@ -80,9 +76,8 @@ def cat_to_shelter(shelters, new_cat)
     
     shelters.each {|shelter|  
         if shelter_select == shelter.name
-            puts "The kitty will be added to #{shelter_select}\n"
+            puts "#{new_cat.name}'s details will be added to #{shelter_select}\n"
             shelter.cats.push(new_cat)
-            p shelter.cats
             puts "Kitty is now searchable"
         end
     }
