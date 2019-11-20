@@ -12,21 +12,9 @@ require_relative './adoptcat'
 
 a = Artii::Base.new
 
-shelters = [
-  Shelter.new("RSPCA", "Wacol", 20, [
-    Cat.new("Mr Purr", "Tabby", "Short_hair", "Quiet", "Male", "3"), 
-    Cat.new("Dundee", "White", "Long_hair", "Quiet", "Female", "3")]),
-    Shelter.new("Little Legs", "Brisbane City", 10, [
-    Cat.new("Duncan", "Tabby", "Short_hair", "Boisterous", "Male", "5"), 
-    Cat.new("Ricky", "Tabby", "Short_hair", "Affectionate", "Male", "3")]),
-    Shelter.new("Animal Rescue QLD", "Garnge", 1, []),
-    Shelter.new("Animal Welfare League QLD", "Helensvale", 1, []),
-    Shelter.new("Little Paws Kitten Rescue", "Logan", 1, []),
-    Shelter.new("Brisbane Valley Cat Rescue", "Esk", 1, []),
-    Shelter.new("Naveen's Cat Foster Care", "Spring Hill", 9, []),
-  ]
 
-
+  shelters = Marshal.load File.read('shelters_file.txt')
+  
 
 #need to pass in shelters array 
 #so that it can iterate over the array within the method

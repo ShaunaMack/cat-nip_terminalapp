@@ -60,12 +60,12 @@ def add_cat(shelters)
     
       new_cat = Cat.new(name, colour, hair_type, temperament, gender, age)
 
-    cat_to_shelter(shelters, new_cat)
+    add_cat_to_shelter(shelters, new_cat)
 
 end
 
 
-def cat_to_shelter(shelters, new_cat)
+def add_cat_to_shelter(shelters, new_cat)
     
     menu = ["Return to menu"]
     shelters.each { |shelter| menu.push(shelter.name)}
@@ -81,5 +81,7 @@ def cat_to_shelter(shelters, new_cat)
         end
     }
     
+    serialized_array = Marshal.dump(shelters)
+    File.open('shelters_file.txt', 'w') {|f| f.write(serialized_array) }
     
 end # of function

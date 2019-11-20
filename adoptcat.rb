@@ -29,12 +29,7 @@ def adopt_kitty(shelters)
 
         if cat_select == cat.name
 
-            puts "You are applying to adopt out #{cat.name}, 
-            hair_type: #{cat.hair_type}, 
-            colour: #{cat.colour}, 
-            age: #{cat.age}, 
-            gender: #{cat.gender},
-            which is currently at #{shelter.name}"
+            puts "You are creating an application for adoption of #{cat.name}, a #{cat.colour} #{cat.hair_type} #{cat.temperament} #{cat.gender} #{cat.age} cat at #{shelter.name}\n"
 
             cat_select_shelter = shelter.name
 
@@ -66,7 +61,7 @@ def adoption_form(cat_select,cat_select_shelter)
     puts "What is the email address of customer adopting cat?"
     email = gets.chomp
     customer_deets.push(email)
-    #if @
+    
     
     
     customer_deets.push("Applying to adopt:#{cat_select}")

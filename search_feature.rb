@@ -21,9 +21,7 @@ def search_by_feature(shelters)
                 end
             }
             if matching
-                puts ""
-                puts "Name: #{cat.name} Colour: #{cat.colour} Hair: #{cat.hair_type} 
-                Temperament: #{cat.temperament} Gender: #{cat.gender} Age: #{cat.age} @Shelter: #{shelter.name}\n"
+                puts "- #{cat.name}, a #{cat.colour} #{cat.hair_type} #{cat.temperament} #{cat.gender} #{cat.age} cat at #{shelter.name}\n"
             end
         }
     }
