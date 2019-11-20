@@ -13,16 +13,15 @@ require_relative './search_feature'
 def adopt_kitty(shelters)
     
     menu = ["Return to menu"]
-
+    # make menu from cats name in shelters array
     shelters.each {|shelter|  
         shelter.cats.each {|cat|
-            menu.push(cat.name)}
+            menu.push(cat.name)}}
     
 
         cat_select = TTY::Prompt.new.select("Which cat has a possible forever home?\n".colorize(:magenta), 
         menu, cycle: true, marker: '>', echo: false)
     
-
 
     #iterate over the shelters array to find cat
 
@@ -38,10 +37,12 @@ def adopt_kitty(shelters)
             gender: #{cat.gender},
             which is currently at #{shelter.name}"
 
+            cat_select_shelter = shelter.name
+
             confirm = %w(yes no)
             selection = TTY::Prompt.new.select("Confirm cat choice", confirm)
                 if selection == 'yes'
-                    adoption_form()
+                    adoption_form(cat_select, cat_select_shelter)
                 end
             
         elsif    cat_select == "Return to menu"
@@ -49,12 +50,11 @@ def adopt_kitty(shelters)
         end
         }
     }
-    }
 end
 
-def adoption_form()
+def adoption_form(cat_select,cat_select_shelter)
     customer_deets = []
-    puts "Please take customer details from drivers licence"
+    puts "Please take customer details from drivers licence".colorize(:magenta)
     puts "What is the full name of customer adopting cat?"
     full_name = gets.chomp
     customer_deets.push(full_name)
@@ -65,8 +65,10 @@ def adoption_form()
     phone_no = gets.chomp
     customer_deets.push(phone_no)
     
-    puts "cat deets"
+    customer_deets.push("Applying to adopt:#{cat_select}")
 
-    File.write('#{Cat.name}.txt', customer_deets)
+    File.write("#{cat_select_shelter}_#{cat_select}_Adoption_Form.txt", customer_deets)
+
+    puts"Adoption application form saved to be sent to the shelter for approval".colorize(:cyan)
 end
 
