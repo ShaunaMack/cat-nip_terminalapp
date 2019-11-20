@@ -59,3 +59,23 @@ Stand up meetings were held twice. In future, especially when working in teams o
 ## User interaction ##
 After the Cat Adoption Officer who will be running the pop up cat adoption centre has followed the steps on the README to run the app, Catnip will disply the main menu. Titles and colours are used throughout the app to give the user (the Cat Adoption Officer) and enjoyable experience.
 
+### *Main Menu*
+![](/user_interaction/Main_Menu.png)
+
+The main menu offers the Cat Adoption Officer the choice to: 
+- Search for a kitty for a customer to adopt.
+- Add a kitty that a customer has brought in that needs to be searchable so that it can be adopted. (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
+- 
+
+### *Search for a Kitty*
+![Kitty Searching Menu](user_interaction/Kitty_Search_Menu.png)
+![Search by feature](user_interaction/Search_by_feature.png)
+![Search by location](user_interaction/Search_by_location.png)
+![Display Cats](user_interaction/Display_cat.png)
+
+### *Add Kitty for Adoption*
+
+![Add Kitty for Adoption](/user_interaction/Add_Kitty_for_Adoption.png)
+
+![Add Kitty with Unique Name](/user_interaction/Add_Kitty_with_Unique_name.png)
+

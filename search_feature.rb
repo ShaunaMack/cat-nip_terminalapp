@@ -25,6 +25,5 @@ def search_by_feature(shelters)
             end
         }
     }
-    # how to make this not print if some criteria met?
-    puts "Sorry, no cats meet your feature criteria at this time\n"
+    # future feature: add a message when no cat's meet search criteria
 end

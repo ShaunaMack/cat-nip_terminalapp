@@ -86,7 +86,7 @@ def name_me_ow() #'Gator said this was acceptable and reasonable
         else
             puts "How many words in your cat name?".colorize(:blue)
             number_of_words = gets.chomp.to_i - 1
-            if number_of_words <= 0 || number_of_words > 6
+            if number_of_words < 0 || number_of_words > 6
                 puts "Two names is most common"
                 number_of_words = 1
             end
