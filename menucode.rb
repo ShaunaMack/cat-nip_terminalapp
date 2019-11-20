@@ -8,6 +8,7 @@ require_relative './cat_namer'
 require_relative './search_location'
 require_relative './search_feature'
 require_relative './adoptcat'
+require_relative './remove_cat'
 
 
 a = Artii::Base.new
@@ -64,7 +65,8 @@ while true
       menu.choice('Search for a kitty to adopt', 1)
       menu.choice('Add kitty for adoption', 2)
       menu.choice('Adopt a kitty', 3)
-      menu.choice('Exit', 4)
+      menu.choice('Remove a kitty', 4)
+      menu.choice('Exit', 5)
 
     case i_want
     when 1
@@ -80,6 +82,10 @@ while true
       adopt_kitty(shelters)
 
     when 4
+      puts "Remove a Kitty"
+      remove_kitty(shelters)
+
+    when 5
       farewell = a.asciify("PURRRRRR").colorize(:cyan)
       farewell.length.times do |i| # Iterates over each index in a given string
         clear()

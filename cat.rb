@@ -41,7 +41,6 @@ def add_cat(shelters)
       puts "What is kitties temperament?".colorize(:blue)
       temperament_choices = %w(Affectionate Quiet Energetic Even Athletic Assertive)
       temperament = TTY::Prompt.new.select("Select temperament", temperament_choices)
-      
 
       puts "Kitties gender?".colorize(:blue)
       gender_choices = %w(female male)
