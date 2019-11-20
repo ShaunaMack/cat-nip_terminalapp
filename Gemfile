@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
 gem 'tty-prompt'
 gem 'artii'
-gem 'rmagick'
-gem 'catpix'
 gem 'colorize'
