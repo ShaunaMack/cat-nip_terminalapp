@@ -1,5 +1,4 @@
 require 'colorize'
-#require 'catpix'
 require 'artii'
 require 'tty-prompt'
 require_relative './util'
@@ -58,12 +57,17 @@ def adoption_form(cat_select,cat_select_shelter)
     puts "What is the full name of customer adopting cat?"
     full_name = gets.chomp
     customer_deets.push(full_name)
-    puts "What is the address of customer adopting cat?"
+    puts "What is the home address of customer adopting cat?"
     address = gets.chomp
     customer_deets.push(address)
     puts "What is the phone number of customer adopting cat?"
     phone_no = gets.chomp
     customer_deets.push(phone_no)
+    puts "What is the email address of customer adopting cat?"
+    email = gets.chomp
+    customer_deets.push(email)
+    #if @
+    
     
     customer_deets.push("Applying to adopt:#{cat_select}")
 

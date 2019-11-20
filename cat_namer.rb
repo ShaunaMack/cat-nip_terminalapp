@@ -1,4 +1,5 @@
 require 'colorize'
+require 'tty-prompt'
 
 def cat_namer(number_of_words)
 
@@ -44,21 +45,17 @@ def cat_namer(number_of_words)
 end
 
 def confirm_name(kitty_called)
-    while true
 
-        puts "How about #{kitty_called}? y/n".colorize(:blue)
-        confirm = gets.chomp.downcase
-        if confirm == "y"
-            puts "Cat is officially named #{kitty_called}"
-            return true
+    puts "How about #{kitty_called}?".colorize(:blue)
+    choices = %w(yes no)
+    confirm = TTY::Prompt.new.select("Confirm name?", choices)
+    
+    if confirm == "yes"
+        puts "Cat is officially named #{kitty_called}"
+        return true
 
-        elsif confirm == "n"
-            return false
-            
-        else
-            puts "Not a valid selection. Please select y or n"
-
-        end
+    else
+        return false
     end
 end
 
@@ -74,25 +71,32 @@ def name_me_ow() #'Gator said this was acceptable and reasonable
         puts "If you have a word to include in this cat's name, please type it in.\n Otherwise, please type n:".colorize(:blue)
         personal_name = gets.chomp.capitalize
 
+
         if personal_name == "N"
             puts "How many words in your cat name?".colorize(:blue)
             number_of_words = gets.chomp.to_i
-            kitty_called = cat_namer(number_of_words)
+            if number_of_words <= 0 || number_of_words > 7
+                puts "Two names is most common"
+                number_of_words = 2
+            end
 
-            happy = confirm_name(kitty_called)
-            return kitty_called
+            kitty_called = cat_namer(number_of_words)
+            
 
         else
             puts "How many words in your cat name?".colorize(:blue)
             number_of_words = gets.chomp.to_i - 1
+            if number_of_words <= 0 || number_of_words > 6
+                puts "Two names is most common"
+                number_of_words = 1
+            end
             kitty_called = cat_namer(number_of_words) + " " + personal_name
             
-            happy = confirm_name(kitty_called)
-            return kitty_called
             
         end
-
+        happy = confirm_name(kitty_called)
     end
+    return kitty_called
 end
 
 

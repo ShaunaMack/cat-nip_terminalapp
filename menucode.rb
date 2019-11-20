@@ -1,5 +1,4 @@
 require 'colorize'
-#require 'catpix'
 require 'artii'
 require 'tty-prompt'
 require_relative './util'
@@ -63,6 +62,7 @@ def search(shelters)
   end # of while loop
 end # of method
 
+clear()
 
 puts a.asciify("Cat-Nip").colorize(:blue)
 puts " The pop up cat adoption centre".colorize(:blue)

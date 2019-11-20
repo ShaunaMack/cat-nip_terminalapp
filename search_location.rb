@@ -1,5 +1,4 @@
 require 'colorize'
-#require 'catpix'
 require 'artii'
 require 'tty-prompt'
 require_relative './shelter'
