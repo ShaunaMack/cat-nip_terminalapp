@@ -208,6 +208,13 @@ This should not be very common given the number of cats available for re-homing.
 
 ------------------------------------------------------------------  
 
+
+# Error Handling
+
+TTY-Prompt gem is used to minimise errors in user input. Users can't enter incorrect values because they have to choose from the presented options. 
+
+When users are required to type information, if statements are used with prompts or default settings to prevent errors.
+
 # The Future of Cat-Nip_TerminalApp
 
 Once funding is established for the committed crew of techies at Cat-Nip the following features could be added:
