@@ -19,13 +19,13 @@ Adoption shelters and independent cat foster care providers would be able to wor
 
 1. Search for a new purring fur baby by
     - location of the local shelters
-    - desirable features for your kitty (for example, colour - ginger)
-2. Apply to adopt your chosen bundle of joy
-    - form created for your customer and sent to the shelter for approval
-3. A stray cat can be added to the database and notifiction sent to a shelter that has room to look after cat where it will live until someone is ready to adopt the kitty baby
+    - desirable features of a kitty (for example, colour - ginger)
+2. Apply to adopt a chosen bundle of joy
+    - form created for your customer and can be sent to the shelter for approval
+3. A stray cat can be added to the database and notifiction can be sent to a shelter to look after cat where it will live until someone is ready to adopt the kitty baby
 
 
-All these features make this 'Pop-Up' cat rehoming booth easy for the chief cat adoption officer to facilitate cat and kitten rehoming in the easiest way possible.
+All these features make this 'Pop-Up' cat rehoming booth easy for the Chief Cat Adoption Officer to facilitate cat and kitten rehoming in the easiest way possible.
 
 
 ## Project Management 
@@ -35,12 +35,12 @@ This ensured the project remained on track and progress or lack of progress over
 
 Stand up meetings were held twice. In future, especially when working in teams on separate branches, this method will be utilised more effectively.
 
-![demonstration of Trello Baord in action during project](Trello_Board_in_progress.png)
+![demonstration of Trello Baord in action during project](docs/Trello_Board_in_progress.png)
 
 
 
 ## Original Concept Flow Chart 
-![conept for cat-nip app as a flowcharts](Original_catnip_flowchart.png)
+![conept for cat-nip app as a flowcharts](docs/Original_catnip_flowchart.png)
 
 
 
@@ -62,24 +62,33 @@ Stand up meetings were held twice. In future, especially when working in teams o
 After the Cat Adoption Officer who will be running the pop up cat adoption centre has followed the steps on the README to run the app, Catnip will disply the main menu. Titles and colours are used throughout the app to give the user (the Cat Adoption Officer) and enjoyable experience.
 
 ### *Main Menu*
-![](/user_interaction/Main_Menu.png)
+<img src=docs/user_interaction/Main_Menu.png alt="Main Menu and lovely title of app Cat-Nip"
+title="Cat Nip Main Menu" width="300" height="250">
 
 The main menu offers the Cat Adoption Officer the choice to: 
 - Search for a kitty for a customer to adopt
-- Add a kitty that a customer has brought in that needs to be searchable so that it can be adopted (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
+- Add a new kitty that needs to be searchable so that it can be adopted (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
 - 
 
 ### *Search for a Kitty*
-![Kitty Searching Menu](user_interaction/Kitty_Search_Menu.png)
-![Search by feature](user_interaction/Search_by_feature.png)
-![Search by location](user_interaction/Search_by_location.png)
-![Display Cats](user_interaction/Display_cat.png)
+<img src=docs/user_interaction/Kitty_Search_Menu.png alt="Kitty searching menu - location or feature"
+title="Kitty Search Menu" width="300" height="250">
+
+<img src=docs/user_interaction/Search_by_feature.png alt="Search by feature"
+title="Search by feature" width="600" height="100">
+
+
+<img src=docs/user_interaction/Search_by_location.png alt="Search by location"
+title="Search by location" width="300" height="160">
+
+<img src=docs/user_interaction/Display_cat.png alt="Cats display"
+title="Display available searched cats" width="500" height="60">
+
 
 ### *Add Kitty for Adoption*
 
-![Add Kitty for Adoption](/user_interaction/Add_Kitty_for_Adoption.png)
-
-![Add Kitty with Unique Name](/user_interaction/Add_Kitty_with_Unique_name.png)
+<img src=docs/user_interaction/Add_Kitty_with_Unique_name.png alt="Add Kitty for Adoption display"
+title="Add Kitty for Adoption" width="500" height="300">
 
 
 ## Manual Testing
@@ -91,9 +100,3 @@ The main menu offers the Cat Adoption Officer the choice to:
 |Cat namer method works as desired with a range cat name of 7 words|
 |Search for kitty by location| Menu|Meow|1. do stuff, 2. do other stuff| pass
 
-folder of 
-ShaunaMcCormakcA1-1
--docs
--ppt
--src
--README

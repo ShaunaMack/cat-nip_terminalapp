@@ -8,6 +8,7 @@ In order to run this app it is assumed that you have already installed ruby 2.6.
 
 To run the app type
 
-`./run.sh`
+`./src/run.sh`
 
-into the Command Line Interface
+into the Command Line Interface.
+
