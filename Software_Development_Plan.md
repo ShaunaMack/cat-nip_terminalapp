@@ -1,11 +1,11 @@
 # Statement of Purpose 
-Cat-nip is a Terminal App to help rehome rescue cats in the Brisbane area. 
+Cat-nip is a Terminal App to help re-home rescue cats in the Brisbane area. 
 
-It connects all the nearby shelters to run the ultimate 'Pop-Up' cat rehoming booth!
+It connects all the nearby shelters to run the ultimate 'Pop-Up' cat re-homing booth!
 
 **Problem to Solve:**
 
-There are sadly many unwanted cats and amzingly several shelters and independent cat foster carers but there isn't a database connecting all the shelters to maximise the chance of adoption. The easier it is to discover the available cats in need, the better chance of rehoming.
+There are sadly many unwanted cats and amazingly several shelters and independent cat foster carers but there isn't a database connecting all the shelters to maximise the chance of adoption. The easier it is to discover the available cats in need, the better chance of re-homing.
 
 This app will allow an operator in a 'Pop-Up' adoption centre to facilitate people to adopt a cat or drop off a cat for adoption.
 
@@ -28,7 +28,7 @@ Stand up meetings were held twice. In future, especially when working in teams o
 
 
 ## Original Concept Flow Chart 
-![conept for cat-nip app as a flowcharts](docs/Original_catnip_flowchart.png)
+![concept for cat-nip app as a flowchart](docs/Original_catnip_flowchart.png)
 
 
 
@@ -46,8 +46,8 @@ Stand up meetings were held twice. In future, especially when working in teams o
 -------------------------------------------------------------
 
 
-## User interaction 
-After the Cat Adoption Officer who will be running the pop up cat adoption centre has followed the steps on the README to run the app, Catnip will disply the main menu. Titles and colours are used throughout the app to give the user (the Cat Adoption Officer) and enjoyable experience.
+## User Interaction 
+After the Cat Adoption Officer who will be running the pop up cat adoption centre has followed the steps on the README to run the app, Catnip will display the main menu. Titles and colours are used throughout the app to give the user (the Cat Adoption Officer) and enjoyable experience.
 
 ### *Main Menu*
 <img src=docs/user_interaction/Main_Menu.png alt="Main Menu and lovely title of app Cat-Nip"
@@ -56,7 +56,7 @@ title="Cat Nip Main Menu" width="300" height="250">
 The main menu offers the Cat Adoption Officer the choice to: 
 - Search for a kitty for a customer to adopt
 - Add a new kitty that needs to be searchable so that it can be adopted (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
-- Start the adoption process for a customer by using thier licence to get some key information to send to the shelter (note: the shelter will make contact with customer to confirm adoption)
+- Start the adoption process for a customer by using their licence to get some key information to send to the shelter (note: the shelter will make contact with customer to confirm adoption)
 - Remove a kitty from the database when contacted by the shelter confirming that adoption was successful
 
 ### *Search for a Kitty*
@@ -70,7 +70,7 @@ When assisting a customer searching for available kitties to adopt there are two
 <img src=docs/user_interaction/Search_by_location.png alt="Search by location"
 title="Search by location" width="300" height="160">
 
-*Search by feature allows user to select multiple desirable features that they are looking for in their new kitty baby. Possible cat options are listed for you to provide to the customer. If cats are not displayed ask customers for any other desirable features to broaden search. If customer is set on a specific feature please tell them to keep popping by to search at another time as the cats often change over becuase this app is so effective!*
+*Search by feature allows user to select multiple desirable features that they are looking for in their new kitty baby. Possible cat options are listed for you to provide to the customer. If cats are not displayed ask customers for any other desirable features to broaden search. If customer is set on a specific feature please tell them to keep popping by to search at another time as the cats often change over because this app is so effective!*
 
 <img src=docs/user_interaction/Search_by_feature.png alt="Search by feature"
 title="Search by feature" width="600" height="100">
@@ -82,29 +82,139 @@ title="Display available searched cats" width="500" height="60">
 
 
 ### *Add Kitty for Adoption*
-*When adding a new cat for adoption there are multiple features to be assigned for optimum searchability and hence adoptability. If a name doesn't already exist for a particular fur baby, a name generator can be used to provide quick and unique names for each new fur baby. The Cat Adoption Officer will then need to notify customer to organise transport of kitty to the shelter that will look after it until adoption.*
+*When adding a new cat for adoption there are multiple features to be assigned for optimum searchability and hence adopt-ability. If a name doesn't already exist for a particular fur baby, a name generator can be used to provide quick and unique names for each new fur baby. The Cat Adoption Officer will then need to notify customer to organise transport of kitty to the shelter that will look after it until adoption.*
 
 <img src=docs/user_interaction/Add_Kitty_with_Unique_name.png alt="Add Kitty for Adoption display"
 title="Add Kitty for Adoption" width="500" height="300">
 
 
 ## Manual Testing
-|Scenario:|Related Requirements:|Description: | Steps:          |Result:|
-|---------|--------------|-------------|----------------------------|------------------|
-|Cat namer method |Selected adding cat for adoption|Gives new unique name to cat that is being put up for adoption| 1. Select 'Add kitty for adoption' option from main menu   <br> 2. Select options for each kitty feature   <br> 3. Type in n for no name already generated <br>4. Select 3 names to generate | Hurrah! Cat name gives name. But...does not save to array - not persistent. Test == Fail|
+
+### Test Scenario 1: Cat Namer
+**Related Requirements:**
+As a cat adoption officer, I want to generate a name for a new cat ready for adoption
+
+**Description:**
+Testing the ability of Cat-Nip_App to generate a unique name to add to a cat description (new object) that is being put up for adoption. Cat Namer generates cat names up to a maximum of 7 words.
+    
+ 
 -----------------------------------------------------
 
-The name_me_ow() method (called in add_cat(shelters) ) needed to return the name as the variable kitty_called to create new cat. Code ammended to create new cat using tty-prompt to manage possibility of incorrect user input.
 
----------------------------------------------------------------------------------------
-|Scenario:|Related Requirements:|Description: | Steps:          |Result:|
-|---------|--------------|-------------|----------------------------|------------------|
-|Cat namer method as above| as above|as above| 1. Select 'Add kitty for adoption' option from main menu <br> 2. Select options for each kitty feature   <br> 3. Type in n for no name already generated <br>4. Select no names to generate | Hmmmmm Cat name gives name as blank  Test == Fail|
+#### Case 1: 3 words
+
+**Steps:**
+>1. Select 'Add kitty for adoption' option from main menu 
+>2. Select options for each kitty feature   
+>3. Type in n for no name already generated
+>4. Enter "3" when prompted for number of words in the name
+
+**Expected result:**
+See a 3 word cat name printed. 
+
+-----------------------------------------------------
+
+**How I used this test during development:** 
+
+*Hurrah! Cat name gives name. But...does not save to array - not persistent.*
+
+**Changes made:** The `name_me_ow()` method (called in `add_cat(shelters)` ) needed to return the name as the variable `kitty_called` to create new cat. Code amended to create new cat using tty-prompt to manage possibility of incorrect user input. Add `shelters` array to a file to write to and look up to enable persistence of cats.
+
+------------------------------------------------------------------       
+#### Case 2: 1 word
+>Steps:
+>1. Select 'Add kitty for adoption' option from main menu 
+>2. Select options for each kitty feature   
+>3. Type in no input for word to include in cat name
+>4. Enter "1" when prompted for number of words in the name
+
+**Expected result:**
+See a 1 word cat name printed. 
+
 ----------------------------------------------
-Shelters array saved to file and re-tested
 
-|Scenario:|Related Requirements:|Description: | Steps:          |Result:|
-|---------|--------------|-------------|----------------------------|------------------|
-|||||works as desired with a range cat name of 7 words|
+**How I used this test during development:** 
+*Oh no! Cat name returned as blank and saved. But...we can't have a nameless cat.*
 
-|Search for kitty by location| Menu|Meow|1. do stuff, 2. do other stuff| pass
+**Changes made:** Needed to add if statement to `name_me_ow()` method so that there is at least 1 word in name and no more than 7 names. (7 seems reasonable for a very fancy kitty!)
+(Now fixed - actual result is expected result)
+
+----------------------------------------------
+#### Case 3: 17 words (bad input)
+>Steps:
+>1. Select 'Add kitty for adoption' option from main menu 
+>2. Select options for each kitty feature   
+>3. Type in any word input for word to include in cat name
+>4. Enter "17" when prompted for number of words in the name
+
+**Expected result:**
+A 2 word cat name is printed. 
+
+----------------------------------------------
+
+**How I used this test during development:** 
+*Oh no! Cat name returned as blank and saved. But...we can't have a nameless cat.*
+
+*Yayayayayay Cat name returned as default 2 names!*
+
+----------------------------------------------
+
+### Scenario: Search by Cat Feature
+
+**Related Requirements:**
+As a cat adoption officer, I want to be able to search cats by their features so that I can browse limited cats rather than all cats in the database
+
+**Description:**
+Testing the ability of Cat-Nip_App to search for cats in the database based on multiple selected
+
+----------------------------------------------
+
+#### Case 1: search by multiple features
+**Steps:**
+>1. Select 'Search for a kitty to adopt' option from main menu 
+>2. Select 'Search by feature' option from kitty searching menu
+>3. Use the arrow keys to move through possible choices and select features using the space bar
+>4. Once all selections of desirable features are made, hit enter to continue
+
+**Expected result:**
+
+Cat listings matching any of the desirable features show as a list
+
+----------------------------------------------
+**How I used this test during development:** 
+
+Yayayayay! Search by cat feature works as expected, producing list of cats with any of the selected desirable feature
+
+------------------------------------------------------------------       
+
+#### Case 2: search by one uncommon feature
+
+**Steps:**
+>1. Select 'Search for a kitty to adopt' option from main menu 
+>2. Select 'Search by feature' option from kitty searching menu
+>3. Use the arrow keys to move through possible choices and select only one feature using the space bar
+>4. Hit enter to continue
+
+**Expected result:**
+
+As there are no cat listings matching this one desirable features, no cats are displayed. 
+
+-----------------------------------------------------
+**How I used this test during development:** 
+
+This test still fails.
+
+This should not be very common given the number of cats available for re-homing. It is not a priority to fix, however, in the future extra functionality can be added to advise that no cats currently match desired features but they could leave details to be notified when a kitty matching becomes available.
+
+------------------------------------------------------------------  
+
+# The Future of Cat-Nip_TerminalApp
+
+Once funding is established for the committed crew of techies at Cat-Nip the following features could be added:
+- Adoption forms can be emailed automatically to cat shelters.
+- Each shelter's cat housing capacity can be stored so we know when shelters are at capacity, and can avoid sending cats to them that would be turned away.
+- An appointment booking feature can be added so that people can go and visit cats before confirming adoption.
+- An approval step for adoption can be integrated into the app and then customers can be notified when their application for adoption is approved.
+
+
+
