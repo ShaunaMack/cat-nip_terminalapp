@@ -2,9 +2,9 @@ require 'colorize'
 #require 'catpix'
 require 'artii'
 require 'tty-prompt'
-require_relative './shelter'
-require_relative './cat'
-require_relative './cat_namer'
+require_relative './src/shelter'
+require_relative './src/cat'
+require_relative './src/cat_namer'
 
 shelters = [
     Shelter.new("RSPCA", "Wacol", 20, [

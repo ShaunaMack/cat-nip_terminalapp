@@ -1,4 +1,4 @@
-## Statement of Purpose ##
+# Statement of Purpose 
 Cat-nip is a Terminal App to help rehome rescue cats in the Brisbane area. 
 
 It connects all the nearby shelters to run the ultimate 'Pop-Up' cat rehoming booth!
@@ -7,15 +7,15 @@ It connects all the nearby shelters to run the ultimate 'Pop-Up' cat rehoming bo
 
 There are sadly many unwanted cats and amzingly several shelters and independent cat foster carers but there isn't a database connecting all the shelters to maximise the chance of adoption. The easier it is to discover the available cats in need, the better chance of rehoming.
 
-This app will allow an operator in a pop up adoption centre to facilitate people to adopt a cat or drop off a cat for adoption. This will 
+This app will allow an operator in a 'Pop-Up' adoption centre to facilitate people to adopt a cat or drop off a cat for adoption.
 
 **Target Audience:**
 
 Adoption shelters and independent cat foster care providers would be able to work together and streamline processes of cat adoption to maximise possibility of finding forever homes.
 
 
-
-## Features ##
+# Implementation Plan
+## Features 
 
 1. Search for a new purring fur baby by
     - location of the local shelters
@@ -27,7 +27,8 @@ Adoption shelters and independent cat foster care providers would be able to wor
 
 All these features make this 'Pop-Up' cat rehoming booth easy for the chief cat adoption officer to facilitate cat and kitten rehoming in the easiest way possible.
 
-## Project Management ##
+
+## Project Management 
 
 Trello board created with specific user stories to plan and prioritise tasks. The Kanban method was utilised on the Trello board with cards - containing checklists to complete.
 This ensured the project remained on track and progress or lack of progress over specific time periods could be 
@@ -38,11 +39,12 @@ Stand up meetings were held twice. In future, especially when working in teams o
 
 
 
-## Original Concept Flow Chart ##
+## Original Concept Flow Chart 
 ![conept for cat-nip app as a flowcharts](Original_catnip_flowchart.png)
 
 
-## Log of Progress ##
+
+## Log of Progress 
 
 | Date       | Status Update                                 
 |------------|------------------------------|
@@ -56,15 +58,15 @@ Stand up meetings were held twice. In future, especially when working in teams o
 -------------------------------------------------------------
 
 
-## User interaction ##
+## User interaction 
 After the Cat Adoption Officer who will be running the pop up cat adoption centre has followed the steps on the README to run the app, Catnip will disply the main menu. Titles and colours are used throughout the app to give the user (the Cat Adoption Officer) and enjoyable experience.
 
 ### *Main Menu*
 ![](/user_interaction/Main_Menu.png)
 
 The main menu offers the Cat Adoption Officer the choice to: 
-- Search for a kitty for a customer to adopt.
-- Add a kitty that a customer has brought in that needs to be searchable so that it can be adopted. (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
+- Search for a kitty for a customer to adopt
+- Add a kitty that a customer has brought in that needs to be searchable so that it can be adopted (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
 - 
 
 ### *Search for a Kitty*
@@ -79,3 +81,19 @@ The main menu offers the Cat Adoption Officer the choice to:
 
 ![Add Kitty with Unique Name](/user_interaction/Add_Kitty_with_Unique_name.png)
 
+
+## Manual Testing
+|Scenario:|Related Requirements:|Description: | Steps:|Result:|
+|--------|-------------------|-------------|--------|--------------|
+|Cat namer method gives new unique name to cat| first gives name but not given to 
+|Cat namer method still runs with no name input|
+|Cat namer method defaults to 2 names when 1 asked for|
+|Cat namer method works as desired with a range cat name of 7 words|
+|Search for kitty by location| Menu|Meow|1. do stuff, 2. do other stuff| pass
+
+folder of 
+ShaunaMcCormakcA1-1
+-docs
+-ppt
+-src
+-README
