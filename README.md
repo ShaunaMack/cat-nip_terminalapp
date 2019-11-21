@@ -17,8 +17,6 @@ It connects all the nearby shelters to run the ultimate 'Pop-Up' cat rehoming bo
 All these features make this 'Pop-Up' cat rehoming booth easy for the Chief Cat Adoption Officer to facilitate cat and kitten rehoming in the easiest way possible.
 
 
-
-
 **System/hardware requirements**
 
 In order to run this app it is assumed that you have already installed ruby 2.6.3 onto your machine
@@ -29,11 +27,13 @@ Clone from the git repository ([Cat-Nip_terminalapp](https://github.com/ShaunaMa
 
         `git clone git@github.com:ShaunaMack/cat-nip_terminalapp.git`
 
-You will need to change directory so that you are in this cloned repository in order to run the files.
+You will need to change directory so that you are in this cloned repository in order to run the files (for example)
+
+        `cd cat-nip_terminalapp/src`
 
 Once in the directory to run the app copy and paste the code below into your terminal
 
-        `./src/run.sh`
+        `./run.sh`
 
 
 **Dependencies required by the application to operate**

@@ -37,12 +37,12 @@ Stand up meetings were held twice. In future, especially when working in teams o
 | Date       | Status Update                                 
 |------------|------------------------------|
 | 09/11/2019 | Brainstorm ideas and make git repository                                                                                                                                                                        
-| 10/11/2019 | Make initial flowchart on lucidcharts. Make Trello Board with Assignment Criteria and User Stories. Send images of flowchart and Trello board to Naveen (techspert) for initial feedback/affirmation          
-| 14/11/2019 | Write code for random name generator including choosing over 200 gender neutral cat names. Make Cat and Shelter classes. Install and run ruby gem 'artii'. Write code for main menu using until loop and case 
-| 15/11/2019 | Change menu code to use ruby gem 'tty-prompt' to make menu easier to use and to decrease issues with user input (limits errors). Install ruby gem catpix and attempt to run - not working yet. Write code for search methods to search and display cats. Make changes to indentation to make code easier to read |   
-| 16/11/2019 | Make the add cat for adoption method and link this to the cat name generator methods. Cat's having unique and fun names will make them more likely to be adopted. Still cannot get catpix to work
-|18/11/2019 |  Create automatic adoption form that can be emailed to the appropriate cat shelter. Work on cat search functionality - Search by feature and search by location possible. Use ascii Pusheen instead of catpix.
-| 20/11/2019 | Add 'tty-prompt' to the add cat for adoption method to minimise errors and make the process easier for the cat adoption officer running the app. Add persistence of shelters array. Remove catpix. Add bash script with bundle to make it easy to run the app.
+| 10/11/2019 | Make initial flowchart on lucidcharts. <br>Make Trello Board with Assignment Criteria and User Stories. <br>Send images of flowchart and Trello board to Naveen (techspert) for initial feedback/affirmation          
+| 14/11/2019 | Write code for random name generator including choosing over 200 gender neutral cat names. <br>Make Cat and Shelter classes. Install and run ruby gem 'artii'. <br>Write code for main menu using until loop and case 
+| 15/11/2019 | Change menu code to use ruby gem 'tty-prompt' to make menu easier to use and to decrease issues with user input (limits errors). <br>Install ruby gem catpix and attempt to run - not working yet. Write code for search methods to search and display cats. <br>Make changes to indentation to make code easier to read |   
+| 16/11/2019 | Make the add cat for adoption method and link this to the cat name generator methods. <br>Cat's having unique and fun names will make them more likely to be adopted. <br>Still cannot get catpix to work
+|18/11/2019 |  Create automatic adoption form that can be emailed to the appropriate cat shelter. <br>Work on cat search functionality - Search by feature and search by location possible. <br>Use ascii Pusheen instead of catpix.
+| 20/11/2019 | Add 'tty-prompt' to the add cat for adoption method to minimise errors and make the process easier for the cat adoption officer running the app. <br>Add persistence of shelters array. <br>Remove catpix. <br>Add bash script with bundle to make it easy to run the app.<br>Confirm with Glen (techspert) that documentation is following correct format.
 -------------------------------------------------------------
 
 
@@ -89,11 +89,22 @@ title="Add Kitty for Adoption" width="500" height="300">
 
 
 ## Manual Testing
-|Scenario:|Related Requirements:|Description: | Steps:|Result:|
-|--------|-------------------|-------------|--------|--------------|
-|Cat namer method |Selected adding cat for adoption|Gives new unique name to cat that is being put up for adoption| 1. Select 'Add kitty for adoption' option from main menu    2. Select options for each kitty feature    3. Type in n for no name already generated 4. Select 3 names to generate | Cat name gives name but not given to 
-|Cat namer method still runs with no name input|
-|Cat namer method defaults to 2 names when 1 asked for|
-|Cat namer method works as desired with a range cat name of 7 words|
-|Search for kitty by location| Menu|Meow|1. do stuff, 2. do other stuff| pass
+|Scenario:|Related Requirements:|Description: | Steps:          |Result:|
+|---------|--------------|-------------|----------------------------|------------------|
+|Cat namer method |Selected adding cat for adoption|Gives new unique name to cat that is being put up for adoption| 1. Select 'Add kitty for adoption' option from main menu   <br> 2. Select options for each kitty feature   <br> 3. Type in n for no name already generated <br>4. Select 3 names to generate | Hurrah! Cat name gives name. But...does not save to array - not persistent. Test == Fail|
+-----------------------------------------------------
 
+The name_me_ow() method (called in add_cat(shelters) ) needed to return the name as the variable kitty_called to create new cat. Code ammended to create new cat using tty-prompt to manage possibility of incorrect user input.
+
+---------------------------------------------------------------------------------------
+|Scenario:|Related Requirements:|Description: | Steps:          |Result:|
+|---------|--------------|-------------|----------------------------|------------------|
+|Cat namer method as above| as above|as above| 1. Select 'Add kitty for adoption' option from main menu <br> 2. Select options for each kitty feature   <br> 3. Type in n for no name already generated <br>4. Select no names to generate | Hmmmmm Cat name gives name as blank  Test == Fail|
+----------------------------------------------
+Shelters array saved to file and re-tested
+
+|Scenario:|Related Requirements:|Description: | Steps:          |Result:|
+|---------|--------------|-------------|----------------------------|------------------|
+|||||works as desired with a range cat name of 7 words|
+
+|Search for kitty by location| Menu|Meow|1. do stuff, 2. do other stuff| pass

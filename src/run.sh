@@ -5,5 +5,5 @@ gem install bundler
 
 bundle install
 
-ruby src/menucode.rb
+ruby menucode.rb
 
