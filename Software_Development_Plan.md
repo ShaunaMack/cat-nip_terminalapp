@@ -15,18 +15,6 @@ Adoption shelters and independent cat foster care providers would be able to wor
 
 
 # Implementation Plan
-## Features 
-
-1. Search for a new purring fur baby by
-    - location of the local shelters
-    - desirable features of a kitty (for example, colour - ginger)
-2. Apply to adopt a chosen bundle of joy
-    - form created for your customer and can be sent to the shelter for approval
-3. A stray cat can be added to the database and notifiction can be sent to a shelter to look after cat where it will live until someone is ready to adopt the kitty baby
-
-
-All these features make this 'Pop-Up' cat rehoming booth easy for the Chief Cat Adoption Officer to facilitate cat and kitten rehoming in the easiest way possible.
-
 
 ## Project Management 
 
@@ -68,24 +56,33 @@ title="Cat Nip Main Menu" width="300" height="250">
 The main menu offers the Cat Adoption Officer the choice to: 
 - Search for a kitty for a customer to adopt
 - Add a new kitty that needs to be searchable so that it can be adopted (note: Cat Adoption Officer will need to notify customer to organise transport of kitty to the shelter that will look after it until adoption)
-- 
+- Start the adoption process for a customer by using thier licence to get some key information to send to the shelter (note: the shelter will make contact with customer to confirm adoption)
+- Remove a kitty from the database when contacted by the shelter confirming that adoption was successful
 
 ### *Search for a Kitty*
 <img src=docs/user_interaction/Kitty_Search_Menu.png alt="Kitty searching menu - location or feature"
 title="Kitty Search Menu" width="300" height="250">
 
-<img src=docs/user_interaction/Search_by_feature.png alt="Search by feature"
-title="Search by feature" width="600" height="100">
+When assisting a customer searching for available kitties to adopt there are two options:
 
+*Search by location provides the shelters available and the location of the shelter so customer can browse all available cats at any one shelter.*
 
 <img src=docs/user_interaction/Search_by_location.png alt="Search by location"
 title="Search by location" width="300" height="160">
+
+*Search by feature allows user to select multiple desirable features that they are looking for in their new kitty baby. Possible cat options are listed for you to provide to the customer. If cats are not displayed ask customers for any other desirable features to broaden search. If customer is set on a specific feature please tell them to keep popping by to search at another time as the cats often change over becuase this app is so effective!*
+
+<img src=docs/user_interaction/Search_by_feature.png alt="Search by feature"
+title="Search by feature" width="600" height="100">
+
+Kitties will be listed as follows:
 
 <img src=docs/user_interaction/Display_cat.png alt="Cats display"
 title="Display available searched cats" width="500" height="60">
 
 
 ### *Add Kitty for Adoption*
+*When adding a new cat for adoption there are multiple features to be assigned for optimum searchability and hence adoptability. If a name doesn't already exist for a particular fur baby, a name generator can be used to provide quick and unique names for each new fur baby. The Cat Adoption Officer will then need to notify customer to organise transport of kitty to the shelter that will look after it until adoption.*
 
 <img src=docs/user_interaction/Add_Kitty_with_Unique_name.png alt="Add Kitty for Adoption display"
 title="Add Kitty for Adoption" width="500" height="300">
@@ -94,7 +91,7 @@ title="Add Kitty for Adoption" width="500" height="300">
 ## Manual Testing
 |Scenario:|Related Requirements:|Description: | Steps:|Result:|
 |--------|-------------------|-------------|--------|--------------|
-|Cat namer method gives new unique name to cat| first gives name but not given to 
+|Cat namer method |Selected adding cat for adoption|Gives new unique name to cat that is being put up for adoption| 1. Select 'Add kitty for adoption' option from main menu    2. Select options for each kitty feature    3. Type in n for no name already generated 4. Select 3 names to generate | Cat name gives name but not given to 
 |Cat namer method still runs with no name input|
 |Cat namer method defaults to 2 names when 1 asked for|
 |Cat namer method works as desired with a range cat name of 7 words|
