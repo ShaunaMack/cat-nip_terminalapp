@@ -1,5 +1,4 @@
 require 'colorize'
-require 'artii'
 require 'tty-prompt'
 require_relative './util'
 require_relative './shelter'
@@ -8,7 +7,9 @@ require_relative './cat_namer'
 require_relative './search_location'
 require_relative './search_feature'
 
-
+# show a menu of cats available for adoption so user can select a cat
+# asks the user to confirm their selection
+# runs adoption_form method
 def adopt_kitty(shelters)
     
     menu = ["Return to menu"]
@@ -46,6 +47,8 @@ def adopt_kitty(shelters)
     }
 end
 
+# asks user to enter the customer's details 
+# creates an adoption form text file to be sent to the shelter
 def adoption_form(cat_select,cat_select_shelter)
     customer_deets = []
     puts "Please take customer details from drivers licence".colorize(:magenta)
@@ -61,8 +64,6 @@ def adoption_form(cat_select,cat_select_shelter)
     puts "What is the email address of customer adopting cat?"
     email = gets.chomp
     customer_deets.push(email)
-    
-    
     
     customer_deets.push("Applying to adopt:#{cat_select}")
 

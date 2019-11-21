@@ -6,6 +6,8 @@ require_relative './cat'
 require_relative './cat_namer'
 require_relative './util'
 
+# provides feature choices, allowing user to select multiple
+# prints cats that match any of the features selected
 def search_by_feature(shelters)
     puts "Search kitty by feature\n"
     choices = %w(Male Female Short_hair Medium_hair Long_hair Tabby White Ginger Black Tortoise_shell)

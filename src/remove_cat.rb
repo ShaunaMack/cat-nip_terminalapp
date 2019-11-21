@@ -8,7 +8,7 @@ require_relative './cat_namer'
 require_relative './search_location'
 require_relative './search_feature'
 
-
+# removes a cat object from shelter and writes the file which holds the shelters array (database)
 def remove_kitty(shelters)
     
     menu = ["Return to menu"]

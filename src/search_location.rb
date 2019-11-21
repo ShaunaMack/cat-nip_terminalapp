@@ -7,6 +7,8 @@ require_relative './cat_namer'
 require_relative './util'
 
 
+# provides shelter choices, allowing user to select one
+# prints all cats that are at that particular shelter
 def search_by_location(shelters) 
     puts "Shelter names and locations".colorize(:blue)
     menu = ["Return to menu"]

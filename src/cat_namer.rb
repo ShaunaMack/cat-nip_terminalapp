@@ -1,6 +1,9 @@
 require 'colorize'
 require 'tty-prompt'
 
+
+# takes the number of words to include in randomly generated cat name
+# returns cat name string 
 def cat_namer(number_of_words)
 
     # need a good list of gender neutral names for individuality of cat naming
@@ -44,6 +47,8 @@ def cat_namer(number_of_words)
     return cat_name
 end
 
+# asks user to confirm the given name
+# returns true if they confirm, false if not
 def confirm_name(kitty_called)
 
     puts "How about #{kitty_called}?".colorize(:blue)
@@ -58,10 +63,10 @@ def confirm_name(kitty_called)
         return false
     end
 end
-
-
-#puts cat_namer(3) to test that the method works
   
+# asks the user if they have a word to include in the cat name, then how many other words they want to include
+# then calls cat_namer and confirm_name
+# returns the chosen name
 def name_me_ow() #'Gator said this was acceptable and reasonable
 
     happy = false

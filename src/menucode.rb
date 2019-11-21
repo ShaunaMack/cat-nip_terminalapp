@@ -17,9 +17,8 @@ a = Artii::Base.new
   shelters = Marshal.load File.read('shelters_file.txt')
   
 
-#need to pass in shelters array 
-#so that it can iterate over the array within the method
-
+# need to pass in shelters array which is the database of shelters and cats
+# shows a menu allowing the user to choose types of search
 def search(shelters)
 
   while true
